@@ -1,0 +1,31 @@
+{
+  "name": "ectomorph",
+  "version": "0.0.0",
+  "description": "Lean skeleton for weighty frontends",
+  "main": "src/platform.js",
+  "type": "module",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3"
+  },
+  "scripts": {
+    "prepare": "node --experimental-modules utils/generate_webmodules.js",
+    "serve": "node utils/static_server.js",
+    "dist": "gulp",
+    "lint": "npx eslint src utils *.js"
+  },
+  "author": "",
+  "license": "Unlicense",
+  "browserslist": [
+    "last 1 Chrome version, last 1 Firefox version"
+  ],
+  "dependencies": {
+    "@rollup/plugin-node-resolve": "^13.0.5",
+    "gulp": "^4.0.2",
+    "rollup": "^2.57.0",
+    "rollup-plugin-terser": "^5.1.2"
+  },
+  "webModules": [
+    "rollup/dist/rollup.js"
+  ]
+}

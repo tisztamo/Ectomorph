@@ -1,0 +1,25 @@
+{
+  "name": "ectomorph-skeleton-app",
+  "version": "0.0.0",
+  "description": "",
+  "main": "loader.js",
+  "type": "module",
+  "scripts": {
+    "prepare": "node --experimental-modules utils/generate_webmodules.js",
+    "dist": "gulp",
+    "lint": "npx eslint src utils"
+  },
+  "author": "",
+  "license": "Unlicense",
+  "dependencies": {
+    "@rollup/plugin-node-resolve": "^13.0.5",
+    "gulp": "^4.0.2",
+    "rollup": "^2.57.0",
+    "rollup-plugin-terser": "^5.1.2"
+  },
+  "webModules": [
+  ],
+  "devDependencies": {
+    "eslint": "^7.32.0"
+  }
+}

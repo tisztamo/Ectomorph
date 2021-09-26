@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Ectomorph platform</title>
+<script>
+    const l = window.location
+    if (!l.pathname.endsWith('/') && !l.pathname.endsWith('html')) {
+      const newUrl = l.origin + l.pathname + "/" + l.search + l.hash
+      window.location.replace(newUrl)
+    }
+</script>
+<link href="../../assets/css/platform.css" rel="stylesheet">
+<script src="../../src/platform.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <script src="./loader.js" type="module"></script>
+</body>
+</html>

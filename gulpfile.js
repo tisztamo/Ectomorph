@@ -1,4 +1,4 @@
-import {buildApps, copyApps, copyWebModules, copyCode, copyConf, copyMocks, copyAssets, copyHtml} from "./utils/build/platform_builder.js"
+import {buildApps, copyApps, copyWebModules, copyCode, copyConf, copyMocks, copyAssets, copyHtml} from "./devtools/build/platform_builder.js"
 
 import pkg from 'gulp'
 const {parallel, series} = pkg

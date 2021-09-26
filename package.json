@@ -9,10 +9,10 @@
     "eslint-config-standard": "^16.0.3"
   },
   "scripts": {
-    "prepare": "node --experimental-modules utils/generate_webmodules.js",
-    "serve": "node utils/static_server.js",
+    "prepare": "node --experimental-modules devtools/generate_webmodules.js",
+    "serve": "node devtools/static_server.js",
     "dist": "gulp",
-    "lint": "npx eslint src utils *.js"
+    "lint": "npx eslint src devtools *.js"
   },
   "author": "",
   "license": "Unlicense",

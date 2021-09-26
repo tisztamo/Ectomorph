@@ -1,6 +1,6 @@
-import {buildConf} from "../../../../utils/build/build_config.js"
+import {buildConf} from "../../../../devtools/build/build_config.js"
 
-import {copyAppAssets, copyAppHtml, copyAppMocks, copyAppConf, copyAppWebModules, bundleAppCode} from "../../../../utils/build/app_builder.js"
+import {copyAppAssets, copyAppHtml, copyAppMocks, copyAppConf, copyAppWebModules, bundleAppCode} from "../../../../devtools/build/app_builder.js"
 
 console.log("Build config: ", buildConf)
 

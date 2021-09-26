@@ -5,9 +5,9 @@
   "main": "loader.js",
   "type": "module",
   "scripts": {
-    "prepare": "node --experimental-modules utils/generate_webmodules.js",
+    "prepare": "node --experimental-modules devtools/generate_webmodules.js",
     "dist": "gulp",
-    "lint": "npx eslint src utils"
+    "lint": "npx eslint src devtools"
   },
   "author": "",
   "license": "Unlicense",

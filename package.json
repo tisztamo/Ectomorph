@@ -25,7 +25,4 @@
     "rollup": "^2.57.0",
     "rollup-plugin-terser": "^5.1.2"
   },
-  "webModules": [
-    "rollup/dist/rollup.js"
-  ]
 }

@@ -1,5 +1,5 @@
 import apps from "../../apps.js"
-import {exec} from "child_process"
+import {execSync} from "child_process"
 import {buildConf} from "./build_config.js"
 import { createRequire } from "module"
 const require = createRequire(import.meta.url)
@@ -10,22 +10,23 @@ const {src, dest} = require("gulp")
 
 export async function executeAppBuild(app) {
   console.log(`Building app "${app.baseDir}"...`)
-  await exec("npm run dist",
+  execSync("npm run dist",
     {
       cwd: app.baseDir,
     },
     function (err, stdout, stderr) {
-      // console.log(stdout)
+      console.log(stdout)
       if (err) {
         console.log(stderr)
         throw (`ERROR: Unable to build app "${app.baseDir}" with command '':`, err)
       }
     }
   )
+  console.log(`App "${app.baseDir}" built.`)
 }
 
 export async function buildApps() {
-  return Promise.all(apps.filter(app => !app.excludeFromDist).map(executeAppBuild))
+  await Promise.all(apps.filter(app => !app.excludeFromDist).map(executeAppBuild))
 }
 
 export async function copyAssets() {

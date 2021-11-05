@@ -17,7 +17,9 @@ async function build(inputOptions, outputOptions) {
 export async function bundleAppCode(application) {
   const inputOptions = {
     input: loaderFile,
-    plugins: [terser.terser()],
+    plugins: [terser.terser({
+      keep_classnames: true
+    })],
     onwarn (warning, warn) {
       if (warning.code === 'UNRESOLVED_IMPORT' &&
         warning.message.indexOf("web_modules") !== -1) return
@@ -55,4 +57,9 @@ export async function copyAppWebModules() {
 export async function copyAppMocks() {
   return src("mocks/**")
     .pipe(dest(distDir + "mocks"))
+}
+
+export async function copyAppLegacyDeps() {
+  return src("legacy_deps/**")
+    .pipe(dest(distDir + "legacy_deps"))
 }

@@ -10,6 +10,7 @@
   },
   "scripts": {
     "prepare": "node --experimental-modules devtools/generate_webmodules.js",
+    "dev": "./dev.sh",
     "serve": "node devtools/static_server.js",
     "dist": "gulp",
     "lint": "npx eslint src devtools *.js"

@@ -38,14 +38,13 @@ http.createServer(function (request, response) {
   fs.readFile(filePath, function(error, content) {
     if (error) {
       if (error.code === 'ENOENT') {
-        fs.readFile('./404.html', function(error, content) {
-          console.log(error)
-          response.writeHead(404, { 'Content-Type': 'text/html' })
-          response.end(content, 'utf-8')
-        })
+        console.log(`${filePath} not found.`)
+        response.writeHead(404, { 'Content-Type': 'text/html' })
+        response.end("Not Found.\n", 'utf-8')
       } else {
+        console.log(error)
         response.writeHead(500)
-        response.end('Sorry, check with the site admin for error: ' + error.code + ' ..\n')
+        response.end("Error reading file.\n")
       }
     } else {
       response.writeHead(200, { 'Content-Type': contentType })
@@ -53,4 +52,4 @@ http.createServer(function (request, response) {
     }
   })
 }).listen(port)
-console.log("Server running at http://127.0.0.1:" + port)
+console.log("Ectomorph dev server running at http://127.0.0.1:" + port)
